@@ -9,6 +9,7 @@ export default function Key({
 }) {
   return (
     <button
+      onClick={onClick}
       className={`flex justify-center items-center bg-lightBlue rounded-sm w-[22px] h-[22px] ${className}`}
     >
       <p className="text-secondary font-bold">{children}</p>

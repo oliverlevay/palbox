@@ -21,7 +21,7 @@ export default function PalCircle({ pal }: { pal: Pal | null }) {
       {pal && (
         <>
           <p className="absolute right-0 font-bold text-sm tracking-wide">1</p>
-          <p className="text-primary font-medium tracking-wide text-center">
+          <p className="text-primary font-medium tracking-wide text-center max-w-[70px] overflow-hidden text-ellipsis whitespace-nowrap">
             {pal.name}
           </p>
           <div className="flex absolute bottom-6 right-0">

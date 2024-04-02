@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Neutral",
+    "image": "/public/images/elements/large/neutral.png"
+  },
+  {
+    "name": "Fire",
+    "image": "/public/images/elements/large/fire.png"
+  },
+  {
+    "name": "Water",
+    "image": "/public/images/elements/large/water.png"
+  },
+  {
+    "name": "Grass",
+    "image": "/public/images/elements/large/grass.png"
+  },
+  {
+    "name": "Electric",
+    "image": "/public/images/elements/large/electric.png"
+  },
+  {
+    "name": "Ice",
+    "image": "/public/images/elements/large/ice.png"
+  },
+  {
+    "name": "Ground",
+    "image": "/public/images/elements/large/ground.png"
+  },
+  {
+    "name": "Dark",
+    "image": "/public/images/elements/large/dark.png"
+  },
+  {
+    "name": "Dragon",
+    "image": "/public/images/elements/large/dragon.png"
+  }
+]
