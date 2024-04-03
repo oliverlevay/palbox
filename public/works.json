@@ -1,0 +1,50 @@
+[
+  {
+    "name": "kindling",
+    "image": "/public/images/works/kindling.png"
+  },
+  {
+    "name": "watering",
+    "image": "/public/images/works/watering.png"
+  },
+  {
+    "name": "planting",
+    "image": "/public/images/works/planting.png"
+  },
+  {
+    "name": "electricity",
+    "image": "/public/images/works/generating_electricity.png"
+  },
+  {
+    "name": "handiwork",
+    "image": "/public/images/works/handiwork.png"
+  },
+  {
+    "name": "gathering",
+    "image": "/public/images/works/gathering.png"
+  },
+  {
+    "name": "lumbering",
+    "image": "/public/images/works/lumbering.png"
+  },
+  {
+    "name": "mining",
+    "image": "/public/images/works/mining.png"
+  },
+  {
+    "name": "medicine",
+    "image": "/public/images/works/medicine_production.png"
+  },
+  {
+    "name": "cooling",
+    "image": "/public/images/works/cooling.png"
+  },
+  {
+    "name": "transporting",
+    "image": "/public/images/works/transporting.png"
+  },
+  {
+    "name": "farming",
+    "image": "/public/images/works/farming.png"
+  }
+]

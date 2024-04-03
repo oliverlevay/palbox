@@ -2,8 +2,8 @@ export default function PaginationBall({
   active,
   onClick,
 }: {
-  active: boolean;
-  onClick: () => void;
+  active?: boolean;
+  onClick?: () => void;
 }) {
   if (active) {
     return (

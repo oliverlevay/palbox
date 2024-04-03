@@ -6,6 +6,7 @@ import Box from "@/components/Box/Box";
 import { useData } from "@/components/DataProvider";
 import Base from "@/components/Base";
 import Filter from "@/components/Filter";
+import Credits from "@/components/Credits";
 
 const archivoNarrow = Archivo_Narrow({ subsets: ["latin"] });
 
@@ -25,7 +26,9 @@ export default function Home() {
           style={{
             width: 384,
           }}
-        />
+        >
+          <Credits />
+        </div>
       </div>
       <Background />
     </main>

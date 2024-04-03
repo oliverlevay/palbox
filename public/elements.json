@@ -1,38 +1,38 @@
 [
   {
-    "name": "Neutral",
+    "name": "neutral",
     "image": "/public/images/elements/large/neutral.png"
   },
   {
-    "name": "Fire",
+    "name": "fire",
     "image": "/public/images/elements/large/fire.png"
   },
   {
-    "name": "Water",
+    "name": "water",
     "image": "/public/images/elements/large/water.png"
   },
   {
-    "name": "Grass",
+    "name": "grass",
     "image": "/public/images/elements/large/grass.png"
   },
   {
-    "name": "Electric",
+    "name": "electric",
     "image": "/public/images/elements/large/electric.png"
   },
   {
-    "name": "Ice",
+    "name": "ice",
     "image": "/public/images/elements/large/ice.png"
   },
   {
-    "name": "Ground",
+    "name": "ground",
     "image": "/public/images/elements/large/ground.png"
   },
   {
-    "name": "Dark",
+    "name": "dark",
     "image": "/public/images/elements/large/dark.png"
   },
   {
-    "name": "Dragon",
+    "name": "dragon",
     "image": "/public/images/elements/large/dragon.png"
   }
 ]

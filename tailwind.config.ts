@@ -22,6 +22,7 @@ const config: Config = {
       lightGreyBackground: "#5B6466",
       lightBlue: "#E0FAFF",
       tealBall: "#07CDF3",
+      darkerBlue: "#4D7775",
     },
   },
   plugins: [],

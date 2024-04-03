@@ -1,5 +1,5 @@
 import { PALS_PER_BOX } from "@/components/DataProvider";
-import { Pal as RealPal } from "@/types";
+import { Pal as RealPal, Suitability } from "@/types";
 
 type Pal = RealPal | null;
 
@@ -27,4 +27,31 @@ export function countNulls(pals: Pal[]): number {
 
 export function findPalByName(pals: Pal[], name: string): Pal {
   return pals.find((pal) => pal?.name === name) ?? null;
+}
+
+/**
+ * Filters pals by types, a pal is included if it has all the types in the types array
+ * @param pals
+ * @param types
+ * @returns
+ */
+
+export function filterByTypes(pals: Pal[], types: string[]): Pal[] {
+  return pals.filter((pal) => {
+    if (!pal) return false;
+    return types.every((type) =>
+      pal.types.some((palType) => palType.name === type)
+    );
+  });
+}
+
+export function filterBySuitabilities(pals: Pal[], works: Suitability[]) {
+  return pals.filter((pal) => {
+    if (!pal) return false;
+    return works.some((work) =>
+      pal.suitability.some(
+        (palWork) => palWork.type === work.type && palWork.level === work.level
+      )
+    );
+  });
 }

@@ -13,6 +13,7 @@ export default function Base() {
         backgroundColor: "rgba(22, 25, 24, 0.95)",
         boxShadow: "0px 0px 6px 6px rgba(22, 25, 24, 0.95)",
       }}
+      className="h-[220px]"
     >
       <TopBar title="Base" />
       <div className="flex flex-wrap gap-[10px] gap-y-1  mt-2 ml-8">

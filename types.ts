@@ -1,3 +1,14 @@
+/* export type TypeName =
+  | "neutral"
+  | "fire"
+  | "water"
+  | "grass"
+  | "electric"
+  | "ice"
+  | "ground"
+  | "dark"
+  | "dragon"; */
+
 export interface Pal {
   id: number;
   key: string;
@@ -28,7 +39,7 @@ export interface Type {
 
 export interface Suitability {
   type: string;
-  image: string;
+  image?: string;
   level: number;
 }
 

@@ -4,14 +4,15 @@ import TopBar from "./TopBar";
 import Pagination from "./Pagination";
 import { useState } from "react";
 import ElementsFilter from "./Filter/ElementsFilter";
+import WorksFilter from "./Filter/WorksFilter";
 
 const filters = [
   <ElementsFilter key="elements-filter" />,
-  <div key="placeholder-1" />,
+  <WorksFilter key="works-filter" />,
   <div key="placeholder-2" />,
 ];
 
-const names = ["Element", "Work suitability", "Passive skills"];
+const names = ["Element", "Work Suitability", "Passive Skills"];
 
 export default function Filter() {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -27,7 +28,7 @@ export default function Filter() {
       }}
       className="flex flex-col items-center"
     >
-      <TopBar title={`Filter ${names[activeIndex - 1]}`} />
+      <TopBar title={`Filter - ${names[activeIndex - 1]}`} />
       <Pagination
         size={3}
         activeIndex={activeIndex}

@@ -1,4 +1,4 @@
-import { Pal } from "@/types";
+import { Pal, Suitability } from "@/types";
 import {
   createContext,
   useCallback,
@@ -11,6 +11,8 @@ import {
   countNulls,
   fillRestWithNulls,
   fillWithNulls,
+  filterBySuitabilities,
+  filterByTypes,
   searchPalArray,
   sliceByBox,
 } from "@/src/palFilterFunctions";
@@ -29,6 +31,12 @@ type Data = {
   search: (query: string) => void;
   nextBox: () => void;
   prevBox: () => void;
+  addTypeFilter: (type: string) => void;
+  removeTypeFilter: (type: string) => void;
+  typeFilterIsActive: (type: string) => boolean;
+  addWorksFilter: (works: Suitability) => void;
+  removeWorksFilter: (works: Suitability) => void;
+  worksFilterIsActive: (works: Suitability) => boolean;
 };
 
 const defaultState: Data = {
@@ -40,6 +48,12 @@ const defaultState: Data = {
   search: () => {},
   nextBox: () => {},
   prevBox: () => {},
+  addTypeFilter: () => {},
+  removeTypeFilter: () => {},
+  typeFilterIsActive: () => false,
+  addWorksFilter: () => {},
+  removeWorksFilter: () => {},
+  worksFilterIsActive: () => false,
 };
 
 const DataContext = createContext<Data>(defaultState);
@@ -61,38 +75,49 @@ export default function DataProvider({
   const [party, setParty] = useState(defaultState.party);
   const [base, setBase] = useState(defaultState.base);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [typeFilters, setTypeFilters] = useState<string[]>([]);
+  const [worksFilters, setWorksFilters] = useState<Suitability[]>([]);
   const [boxIndex, setBoxIndex] = useState(defaultState.boxIndex);
 
   const filterBox = useCallback(() => {
     let newBox: (Pal | null)[] = defaultPals;
     if (searchQuery) newBox = searchPalArray(newBox, searchQuery);
+    if (typeFilters.length > 0) newBox = filterByTypes(newBox, typeFilters);
+    if (worksFilters.length > 0)
+      newBox = filterBySuitabilities(newBox, worksFilters);
     newBox = sliceByBox(newBox, boxIndex);
     if (newBox.length < PALS_PER_BOX)
       newBox = fillRestWithNulls(newBox, PALS_PER_BOX);
     setBox(newBox);
-  }, [boxIndex, searchQuery]);
+  }, [boxIndex, searchQuery, typeFilters, worksFilters]);
 
   const filterParty = useCallback(() => {
     let newParty: (Pal | null)[] = defaultState.party;
     if (searchQuery) newParty = searchPalArray(newParty, searchQuery);
+    if (typeFilters.length > 0) newParty = filterByTypes(newParty, typeFilters);
+    if (worksFilters.length > 0)
+      newParty = filterBySuitabilities(newParty, worksFilters);
     if (newParty.length < PARTY_SIZE)
       newParty = fillWithNulls(newParty, countNulls(defaultState.party));
     setParty(newParty);
-  }, [searchQuery]);
+  }, [searchQuery, typeFilters, worksFilters]);
 
   const filterBase = useCallback(() => {
     let newBase: (Pal | null)[] = defaultState.base;
     if (searchQuery) newBase = searchPalArray(newBase, searchQuery);
+    if (typeFilters.length > 0) newBase = filterByTypes(newBase, typeFilters);
+    if (worksFilters.length > 0)
+      newBase = filterBySuitabilities(newBase, worksFilters);
     if (newBase.length < defaultState.base.length)
       newBase = fillWithNulls(newBase, countNulls(defaultState.base));
     setBase(newBase);
-  }, [searchQuery]);
+  }, [searchQuery, typeFilters, worksFilters]);
 
   useEffect(() => {
     filterBox();
     filterParty();
     filterBase();
-  }, [filterBox, filterParty, filterBase, boxIndex, searchQuery]);
+  }, [filterBox, filterParty, filterBase, boxIndex, searchQuery, typeFilters]);
 
   return (
     <DataContext.Provider
@@ -121,6 +146,36 @@ export default function DataProvider({
             }
             return prev - 1;
           });
+        },
+        addTypeFilter: (type) => {
+          setTypeFilters((prev) => {
+            if (prev.includes(type)) return prev;
+            return [...prev, type];
+          });
+        },
+        removeTypeFilter: (type) => {
+          setTypeFilters((prev) => {
+            return prev.filter((t) => t !== type);
+          });
+        },
+        typeFilterIsActive: (type) => typeFilters.includes(type),
+        addWorksFilter: (works) => {
+          setWorksFilters((prev) => {
+            if (prev.includes(works)) return prev;
+            return [...prev, works];
+          });
+        },
+        removeWorksFilter: (works) => {
+          setWorksFilters((prev) => {
+            return prev.filter(
+              (w) => w.type !== works.type || w.level !== works.level
+            );
+          });
+        },
+        worksFilterIsActive: (works) => {
+          return worksFilters.some(
+            (w) => w.type === works.type && w.level === works.level
+          );
         },
       }}
     >
