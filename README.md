@@ -96,3 +96,10 @@ It's very intentional that the filters apply to your Party, Box and Base. The re
 ![alt text](https://palbox.netlify.app/readme/image-6.png)
 
 If you have any feedback, reach out to me on Twitter, Reddit or by making an issue to the GitHub repository.
+
+https://twitter.com/oliverlevays
+
+https://www.reddit.com/user/oliverlevay/
+
+https://github.com/oliverlevay
+
