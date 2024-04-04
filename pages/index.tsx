@@ -7,6 +7,7 @@ import { useData } from "@/components/DataProvider";
 import Base from "@/components/Base";
 import Filter from "@/components/Filter";
 import Credits from "@/components/Credits";
+import Head from "next/head";
 
 const archivoNarrow = Archivo_Narrow({ subsets: ["latin"] });
 
@@ -15,6 +16,9 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col pt-4 ${archivoNarrow.className}`}
     >
+      <Head>
+        <title>PALBOX UI DEMO</title>
+      </Head>
       <div className="flex justify-center z-10 gap-10">
         <Filter />
         <div className="flex flex-col gap-4">
