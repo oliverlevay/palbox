@@ -6,7 +6,7 @@ This is prototype I created to showcase how I wish that the palbox UI works.
 
 Not much for reading? Check out the DEMO here:
 
-https://palworld-ui.netlify.app/ (DESKTOP ONLY)
+https://palbox.netlify.app/ (DESKTOP ONLY)
 
 I recommend zooming out on smaller screens.
 
