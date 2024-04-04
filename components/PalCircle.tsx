@@ -20,7 +20,18 @@ export default function PalCircle({ pal }: { pal: Pal | null }) {
       </div>
       {pal && (
         <>
-          <p className="absolute right-0 font-bold text-sm tracking-wide">1</p>
+          <p
+            className="absolute font-bold text-sm tracking-wide"
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              padding: "2px 4px",
+              borderRadius: "4px",
+              right: "-8px",
+              top: "-8px",
+            }}
+          >
+            Lv.{pal.level}
+          </p>
           <p className="text-primary font-medium tracking-wide text-center max-w-[70px] overflow-hidden text-ellipsis whitespace-nowrap">
             {pal.name}
           </p>

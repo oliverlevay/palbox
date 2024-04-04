@@ -1,10 +1,12 @@
 import elements from "@/public/elements.json";
 import Image from "next/image";
 import { useData } from "../DataProvider";
+import LevelSlider from "../LevelSlider";
 
 export default function ElementsFilter() {
   return (
     <div className="flex flex-col gap-4">
+      <LevelSlider />
       {elements.map((element) => {
         return <Element element={element} key={element.name} />;
       })}

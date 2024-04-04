@@ -11,6 +11,7 @@
 
 export interface Pal {
   id: number;
+  level: number;
   key: string;
   image: string;
   name: string;

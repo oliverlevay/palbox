@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useData } from "./DataProvider";
 
 export default function HotKeyProvider() {
-  const { nextBox, prevBox } = useData();
+  const { nextBox, prevBox, prevFilter, nextFilter } = useData();
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const tagName = document.activeElement?.tagName.toLowerCase();
@@ -18,6 +18,12 @@ export default function HotKeyProvider() {
         prevBox();
       } else if (event.key === "e") {
         nextBox();
+      }
+
+      if (event.key === "a") {
+        prevFilter();
+      } else if (event.key === "d") {
+        nextFilter();
       }
     };
     window.addEventListener("keydown", handleKeyDown);

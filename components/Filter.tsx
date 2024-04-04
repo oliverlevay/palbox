@@ -1,8 +1,6 @@
-import PalCircle from "./PalCircle";
 import { useData } from "./DataProvider";
 import TopBar from "./TopBar";
 import Pagination from "./Pagination";
-import { useState } from "react";
 import ElementsFilter from "./Filter/ElementsFilter";
 import WorksFilter from "./Filter/WorksFilter";
 
@@ -15,8 +13,7 @@ const filters = [
 const names = ["Element", "Work Suitability", "Passive Skills"];
 
 export default function Filter() {
-  const [activeIndex, setActiveIndex] = useState(1);
-  const { base } = useData();
+  const { setFilterIndex, filterIndex, prevFilter, nextFilter } = useData();
   return (
     <div
       style={{
@@ -28,17 +25,17 @@ export default function Filter() {
       }}
       className="flex flex-col items-center"
     >
-      <TopBar title={`Filter - ${names[activeIndex - 1]}`} />
+      <TopBar title={`Filter - ${names[filterIndex - 1]}`} />
       <Pagination
         size={3}
-        activeIndex={activeIndex}
-        onCircleClick={setActiveIndex}
-        onLeft={() => setActiveIndex(activeIndex - 1)}
-        onRight={() => setActiveIndex(activeIndex + 1)}
+        activeIndex={filterIndex}
+        onCircleClick={setFilterIndex}
+        onLeft={() => prevFilter()}
+        onRight={() => nextFilter()}
         leftKey="A"
         rightKey="D"
       />
-      {filters[activeIndex - 1]}
+      {filters[filterIndex - 1]}
     </div>
   );
 }

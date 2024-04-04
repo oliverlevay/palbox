@@ -55,3 +55,9 @@ export function filterBySuitabilities(pals: Pal[], works: Suitability[]) {
     );
   });
 }
+
+export function filterByLevels(pals: Pal[], levels: [number, number]) {
+  return pals.filter(
+    (pal) => pal && pal.level >= levels[0] && pal.level <= levels[1]
+  );
+}
