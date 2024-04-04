@@ -36,7 +36,9 @@ export const Element = ({
       }}
     >
       <Image src={element.image} alt={element.name} width={48} height={48} />
-      <p className="font-medium text-2xl capitalize">{element.name}</p>
+      <p className="text-primary font-medium text-2xl capitalize">
+        {element.name}
+      </p>
     </button>
   );
 };

@@ -11,7 +11,7 @@ export default function LevelSlider({ className }: { className?: string }) {
         className ?? ""
       }`}
     >
-      <p className="text-xl mb-2 text-center">Level Filter</p>
+      <p className="text-primary text-xl mb-2 text-center">Level Filter</p>
 
       <div className="flex justify-between mb-4">
         <InputField

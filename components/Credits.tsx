@@ -1,10 +1,7 @@
-import PalCircle from "./PalCircle";
-import { useData } from "./DataProvider";
 import TopBar from "./TopBar";
 import GitHubWhiteIcon from "./icons/GitHubWhiteIcon";
 
 export default function Credits() {
-  const { base } = useData();
   return (
     <div
       style={{
@@ -15,12 +12,16 @@ export default function Credits() {
     >
       <TopBar title="Credits" />
       <div className="flex flex-col gap-3 p-4">
-        <p>Created by Oliver Levay because I love Palworld ❤️</p>
-        <p>
+        <p className="text-primary">
+          Created by Oliver Levay because I love Palworld ❤️
+        </p>
+        <p className="text-primary">
           This is prototype I created to showcase how I wish that the palbox UI
           works.
         </p>
-        <p>The code is open-source and available at my GitHub.</p>
+        <p className="text-primary">
+          The code is open-source and available at my GitHub.
+        </p>
         <a
           className="flex gap-2 underline"
           href="https://github.com/oliverlevay"
@@ -28,7 +29,7 @@ export default function Credits() {
           <GitHubWhiteIcon /> @oliverlevay
         </a>
 
-        <p>
+        <p className="text-primary">
           Special thanks to the GitHub project{" "}
           <a
             href="https://github.com/mlg404/palworld-paldex-api"
@@ -38,7 +39,7 @@ export default function Credits() {
           </a>{" "}
           where I could find the necessary data.
         </p>
-        <p>
+        <p className="text-primary">
           This is a fan project and not affiliated with Pocketpair in any way.
           All rights to the game belong to Pocketpair.
         </p>

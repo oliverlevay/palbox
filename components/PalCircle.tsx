@@ -21,7 +21,7 @@ export default function PalCircle({ pal }: { pal: Pal | null }) {
       {pal && (
         <>
           <p
-            className="absolute font-bold text-sm tracking-wide"
+            className="text-primary absolute font-bold text-sm tracking-wide"
             style={{
               backgroundColor: "rgba(0, 0, 0, 0.5)",
               padding: "2px 4px",

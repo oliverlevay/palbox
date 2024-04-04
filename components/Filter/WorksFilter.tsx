@@ -43,7 +43,9 @@ export const Work = ({ work }: { work: { name: string; image: string } }) => {
       `}
     >
       <Image src={work.image} alt={work.name} width={40} height={40} />
-      <p className="font-medium text-2xl capitalize">{work.name}</p>
+      <p className="text-primary font-medium text-2xl capitalize">
+        {work.name}
+      </p>
       <div className="flex gap-3 ml-auto">
         <PaginationBall
           active={worksFilterIsActive({
